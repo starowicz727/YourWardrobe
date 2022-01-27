@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.ShowFavPage">
+
+    <NavigationPage.TitleView>
+        <Label Text="Your favorites"
+               HorizontalOptions="Start"
+               VerticalOptions="End"
+               TextColor="#E8D1FF"
+               FontSize="40"
+               FontFamily="MoonDance"/>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Gray" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <CollectionView x:Name="collectionFavView"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="Black"
+                            ItemsSource="{Binding Clothes}"
+                            SelectionMode ="Multiple"
+                            SelectionChanged="collectionFavView_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2"
+                                     VerticalItemSpacing="0"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="itemGrid" BackgroundColor="Black" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding Image}"
+                                   Grid.Column="0"
+                                   Margin="2,2,2,2"
+                                   WidthRequest ="100"
+                                   HeightRequest="200"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <DatePicker x:Name="myDateFavPicker"
+                        Margin="20,0,10,0"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="1"
+                        BackgroundColor="Gray"
+                        HeightRequest="40"
+                        IsVisible = "false"
+                        DateSelected="myDateFavPicker_DateSelected"/>
+
+            <Button x:Name="ButtonSaveFavToCalendar"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="17"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    IsVisible="false"
+                    CornerRadius="20"
+                    Margin="10,0,20,0"
+                    Text = "SAVE"
+                    TextColor="#E8D1FF"
+                    FontFamily="MoonDance"
+                    Clicked="ButtonSaveFavToCalendar_Clicked">
+            </Button>
+
+            <ImageButton x:Name="ButtonFavBin"
+                 BackgroundColor="#282828"
+                Padding="0,3,5,5"
+                Grid.Row = "2"
+                Grid.Column="1"
+                Margin="0,0,5,0"
+                Source="bin.png"
+                Clicked="ButtonFavBin_Clicked"/>
+
+            <ImageButton x:Name="ButtonFavCalendar"
+                BackgroundColor="#282828"
+                Padding="0,3,0,0"
+                Grid.Row = "2"
+                Grid.Column="0"
+                Margin="5,0,0,0"
+                Source="calendar.png"
+                Clicked="ButtonFavCalendar_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

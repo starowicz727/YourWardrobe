@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.MainPage"
+             Background="violet">
+
+    <NavigationPage.TitleView>
+        <Label Text="Your wardrobe" 
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               TextColor="#ff80ff"
+               FontSize="40"
+               FontFamily="MoonDance"/>
+    </NavigationPage.TitleView>
+    
+    <Grid Padding="0,5,0,0"
+          BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.15*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Padding="5,5,5,20"
+              Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--  #ffe7f9  byc moze ten kolor? -->
+            <ImageButton x:Name="ButtonAccessories"
+                     BackgroundColor="#E8D1FF"
+                     Grid.Column="0"
+                     Grid.Row="0"
+                     Padding="5,5,5,5"
+                     CornerRadius="20"
+                     Source="accessories.png"
+                     Clicked="ButtonAccessories_Clicked"/>
+
+            <ImageButton x:Name="ButtonShirt"
+                     BackgroundColor="#E8D1FF"
+                     Grid.Column="1"
+                     Grid.Row="0"
+                     Padding="5,5,5,5"
+                     CornerRadius="20"
+                     Source="shirt.png"
+                     Clicked="ButtonShirt_Clicked"/>
+
+            <ImageButton x:Name="ButtonSkirt"
+                     BackgroundColor="#E8D1FF"
+                     Grid.Column="0"
+                     Grid.Row="1"
+                     Padding="5,5,5,5"
+                     CornerRadius="20"
+                     Source="skirt.png"
+                     Clicked="ButtonSkirt_Clicked"/>
+
+            <ImageButton x:Name="ButtonDress"
+                     BackgroundColor="#E8D1FF"
+                     Grid.Column="1"
+                     Grid.Row="1"
+                     Padding="5,5,5,5"
+                     CornerRadius="20"
+                     Source="dress.png"
+                     Clicked="ButtonDress_Clicked"/>
+
+            <ImageButton x:Name="ButtonPants"
+                     BackgroundColor="#E8D1FF"
+                     Grid.Column="0"
+                     Grid.Row="2"
+                     Padding="5,5,5,5"
+                     CornerRadius="20"
+                     Source="pants.png"
+                     Clicked="ButtonPants_Clicked"/>
+
+            <ImageButton x:Name="ButtonJacket"
+                     BackgroundColor="#E8D1FF"
+                     Grid.Column="1"
+                     Grid.Row="2"
+                     Padding="5,5,5,5"
+                     CornerRadius="20"
+                     Source="jacket.png"
+                     Clicked="ButtonJacket_Clicked"/>
+
+            <ImageButton x:Name="ButtonShoes"
+                     BackgroundColor="#E8D1FF"
+                     Grid.Column="0"
+                     Grid.Row="3"
+                     Padding="5,5,5,5"
+                     CornerRadius="20"
+                     Source="shoes.png"
+                     Clicked="ButtonShoes_Clicked"/>
+
+            <ImageButton x:Name="ButtonBag"
+                     BackgroundColor="#E8D1FF"
+                     Grid.Column="1"
+                     Grid.Row="3"
+                     Padding="5,5,5,5"
+                     CornerRadius="20"
+                     Source="bag.png"
+                     Clicked="ButtonBag_Clicked"/>
+
+        </Grid>
+
+        <Grid  Padding="0,0,0,10"
+               BackgroundColor="black"
+               Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ImageButton x:Name="ButtonMainCalendar"
+                     BackgroundColor="#282828"
+                     Grid.Column="0"
+                     Grid.Row="0"
+                     Margin="5,0,0,0"
+                     Padding="5"
+                     CornerRadius="4"
+                     Source="calendarMain.png"
+                     Clicked="ButtonMainCalendar_Clicked"/>
+
+            <ImageButton x:Name="ButtonInspo"
+                     BackgroundColor="#282828"
+                     Grid.Column="1"
+                     Grid.Row="0"
+                     Padding="5"
+                     CornerRadius="4"
+                     Source="hanger.png"
+                     Clicked="ButtonInspo_Clicked"/>
+                    <!-- HorizontalOptions="Center" -->
+
+
+            <ImageButton x:Name="ButtonAddItem"
+                     BackgroundColor="#282828"
+                     Grid.Column="2"
+                     Margin="0,0,5,0"
+                     Grid.Row="0"
+                     CornerRadius="4"
+                     Source="plus.png"
+                     Clicked="ButtonAddItem_Clicked"/>
+                    <!-- HorizontalOptions="Center" -->
+        </Grid>
+
+            
+    </Grid>
+    
+
+</ContentPage>

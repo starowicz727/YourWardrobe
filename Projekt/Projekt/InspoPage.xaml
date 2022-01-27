@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.InspoPage">
+
+    <NavigationPage.TitleView>
+        <Label Text="Find inspiration" 
+               HorizontalOptions="Start"
+               VerticalOptions="End"
+               TextColor="#E8D1FF"
+               FontSize="40"
+               FontFamily="MoonDance"/>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ImageButton x:Name="ButtonFav"
+                     BackgroundColor="#282828"
+                     Grid.Row="0"
+                     Padding="5,15,5,15"
+                     Margin="5,15,5,5"
+                     BorderColor="#E8D1FF"
+                     BorderWidth="5"
+                     CornerRadius="20"
+                     Source="heartBlack.png"
+                     Clicked="ButtonFav_Clicked"/>
+            
+            <ImageButton x:Name="ButtonLoupe"
+                     BackgroundColor="#282828"
+                     Grid.Row="1"
+                     Padding="5,15,5,15"
+                     Margin="5,5,5,15"
+                     BorderColor="#E8D1FF"
+                     BorderWidth="5"
+                     CornerRadius="20"
+                     Source="loupe.png"
+                     Clicked="ButtonLoupe_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

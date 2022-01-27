@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"
+  xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+  xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10"
+  xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+  IgnorableNamespaces="uap mp uap3 uap6 uap2 iot uap4">
+
+  <Identity
+    Name="833b1fbf-33c8-4294-b3bc-a093541315ec"
+    Publisher="CN=a757925f-bf9f-42ea-a4ce-8d1d58237960"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>YourWardrobe.UWP</DisplayName>
+    <PublisherDisplayName>a757925f-bf9f-42ea-a4ce-8d1d58237960</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="Projekt.UWP.App">
+      <uap:VisualElements
+        DisplayName="YourWardrobe.UWP"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="Projekt.UWP"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png" ShortName="YourWadrobe">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="picturesLibrary"/>
+    <uap6:Capability Name="graphicsCapture"/>
+    <uap:Capability Name="removableStorage"/>
+    <Capability Name="allJoyn"/>
+    <uap:Capability Name="musicLibrary"/>
+    <uap:Capability Name="videosLibrary"/>
+    <Capability Name="codeGeneration"/>
+    <uap:Capability Name="chat"/>
+    <uap:Capability Name="userAccountInformation"/>
+    <Capability Name="internetClientServer"/>
+    <uap:Capability Name="contacts"/>
+    <uap:Capability Name="objects3D"/>
+    <uap3:Capability Name="userNotificationListener"/>
+    <uap3:Capability Name="backgroundMediaPlayback"/>
+    <uap2:Capability Name="spatialPerception"/>
+    <uap:Capability Name="voipCall"/>
+    <uap:Capability Name="phoneCall"/>
+    <uap2:Capability Name="phoneCallHistoryPublic"/>
+    <uap3:Capability Name="remoteSystem"/>
+    <Capability Name="privateNetworkClientServer"/>
+    <uap:Capability Name="appointments"/>
+    <uap:Capability Name="sharedUserCertificates"/>
+    <iot:Capability Name="lowLevelDevices"/>
+    <uap:Capability Name="enterpriseAuthentication"/>
+    <uap:Capability Name="blockedChatMessages"/>
+    <uap4:Capability Name="userDataTasks"/>
+    <uap4:Capability Name="offlineMapsManagement"/>
+    <iot:Capability Name="systemManagement"/>
+    <DeviceCapability Name="bluetooth"/>
+    <DeviceCapability Name="gazeInput"/>
+    <DeviceCapability Name="webcam"/>
+    <DeviceCapability Name="location"/>
+    <DeviceCapability Name="microphone"/>
+    <DeviceCapability Name="lowLevel"/>
+    <DeviceCapability Name="pointOfService"/>
+  </Capabilities>
+</Package>

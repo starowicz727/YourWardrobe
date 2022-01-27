@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.AddItemPage">
+
+    <NavigationPage.TitleView>
+        <Label Text="Add new item" 
+               HorizontalOptions="Start"
+               VerticalOptions="End"
+               TextColor="#E8D1FF"
+               FontSize="30"
+               FontFamily="MoonDance"/>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="resultImage"
+                   Margin="10,10,10,1"
+                   HeightRequest="300"
+                   WidthRequest="300"
+                   BackgroundColor="#E8D1FF"
+                   Source="photo.png">
+            </Image>
+
+            <Button x:Name="ButtonPickImage"
+                    FontSize="30"
+                    Text = "PICK IMAGE"
+                    TextColor="#E8D1FF"
+                    FontFamily="MoonDance"
+                    CornerRadius="20"
+                    Margin="50,1,50,1"
+                    Clicked="ButtonPickImage_Clicked">
+            </Button>
+
+            <Picker x:Name="pickerItemType"
+                TextColor="Black"
+                FontFamily="MoonDance"
+                FontSize="30"
+                Margin="10,1,10,1"
+                WidthRequest="10"
+                BackgroundColor="#E8D1FF"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                SelectedIndexChanged="pickerItemType_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Accessories</x:String>
+                    <x:String>Shirt</x:String>
+                    <x:String>Skirt</x:String>
+                    <x:String>Dress</x:String>
+                    <x:String>Pants</x:String>
+                    <x:String>Jacket</x:String>
+                    <x:String>Shoes</x:String>
+                    <x:String>Bag</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <Button x:Name="ButtonSaveItem"
+                    FontSize="30"
+                    CornerRadius="20"
+                    Margin="50,1,50,1"
+                    Text = "SAVE"
+                    TextColor="#E8D1FF"
+                    FontFamily="MoonDance"
+                    Clicked="ButtonSaveItem_Clicked">
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

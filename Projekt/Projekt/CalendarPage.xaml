@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Projekt.CalendarPage">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="#E8D1FF" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <Label Text="Your planner" 
+               HorizontalOptions="Start"
+               VerticalOptions="End"
+               TextColor="#E8D1FF"
+               FontSize="30"
+               FontFamily="MoonDance"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <DatePicker x:Name="myDatePickerCalendar"
+                        Grid.Row="0"
+                        HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Black"
+                        DateSelected="myDatePickerCalendar_DateSelected"/>
+
+            <CollectionView x:Name="collectionViewCalendar"
+                            Grid.Row="1"
+                            BackgroundColor="Black"
+                            ItemsSource="{Binding Clothes}"
+                            SelectionMode ="Multiple"
+                            SelectionChanged="collectionViewCalendar_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2"
+                                     VerticalItemSpacing="0"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="itemGrid" BackgroundColor="Black" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding Image}"
+                                   Grid.Column="0"
+                                   Margin="2,2,2,2"
+                                   WidthRequest ="300"
+                                   HeightRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <ImageButton x:Name="ButtonBinCallendar"
+                BackgroundColor="Black"
+                Padding="0,0,5,5"
+                Grid.Row = "2"
+                HorizontalOptions="End"
+                Source="bin.png"
+                Clicked="ButtonBinCallendar_Clicked"/>
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>
