@@ -73,10 +73,15 @@ namespace Projekt
                 var newFile = Path.Combine(FileSystem.CacheDirectory, result.FileName); //await result.OpenReadAsync();
                 using (var stream = await result.OpenReadAsync())
                 using (var newStream = File.OpenWrite(newFile))
+                {
                     await stream.CopyToAsync(newStream);
-
+                    newStream.Close();
+                    stream.Close();
+                }
+                   
                 resultImage.Source = newFile;
                 selectedSource = newFile;
+           
                 //resultImage.Source = ImageSource.FromStream(() => stream);
                 //selectedSource = result.FullPath;
                 //String myPath = result.FullPath;
